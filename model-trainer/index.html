@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Model Trainer</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="libs/tf.min.js"></script>
+</head>
+<body>
+<input type="file" id="sample-images" accept=".png" multiple="true"/>
+<input type="file" id="sample-json" accept=".json" multiple="true"/>
+<button id="train-model">Train Model.</button>
+<button id="save-model-local">Save Model Local.</button>
+<button id="load-model-local">Load Model Local.</button>
+<button id="save-model-file">Save Model to File.</button>
+<button id="load-model-file">Load Model from File.</button>
+<input type="file" id="files" accept=".json,.bin" multiple="true">
+<div id="target"></div>
+
+<script src="model.js"></script>
+<script src="index.js"></script>
+</body>
+</html>
