@@ -22,7 +22,7 @@ document.body.addEventListener('keydown', getSample);
 
 overLairSamples.addEventListener('click', removeImage);
 
-function createGrid() {
+function showGrid() {
     overLair.style.display = 'block';
     drawBox();
 }
@@ -40,34 +40,23 @@ function hideSamples() {
 }
 
 function getSample(event) {
-    console.log(event.keyCode);
-    // space
     if (event.keyCode === 32) {
-        console.log('space', documentWidth, documentHeight);
         createImage();
         event.preventDefault();
     }
-    // left
     if (event.keyCode === 37) {
-        console.log('left', documentWidth, documentHeight);
         sample.x--;
         event.preventDefault();
     }
-    // up
     if (event.keyCode === 38) {
-        console.log('up', documentWidth, documentHeight);
         sample.y--;
         event.preventDefault();
     }
-    // right
     if (event.keyCode === 39) {
-        console.log('right', documentWidth, documentHeight);
         sample.x++;
         event.preventDefault();
     }
-    // down
     if (event.keyCode === 40) {
-        console.log('down', documentWidth, documentHeight);
         sample.y++;
         event.preventDefault();
     }
@@ -75,7 +64,6 @@ function getSample(event) {
 }
 
 function createImage() {
-    // sample.id = samples.reduce((acc, value) => acc.id > value.id ? acc.id : value.id, getCount()) + 1;
     sample.id = getCount() + 1;
     setCount(sample.id);
     samples.push({...sample});
@@ -125,4 +113,15 @@ function drawBox() {
     overLairBox.style.left = sample.x * width + 'px';
     overLairBox.style.top = sample.y * height + 'px';
     samplePosition.innerHTML = `(${sample.x},&nbsp;${sample.y})`;
+}
+
+function getCount() {
+    const count = localStorage.getItem('count');
+    if (count !== 'undefined') return +count;
+    localStorage.setItem('count', '0');
+    return 0;
+}
+
+function setCount(count) {
+    localStorage.setItem('count', '' + count);
 }

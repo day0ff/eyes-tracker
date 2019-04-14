@@ -38,7 +38,6 @@ window.addEventListener('load', () => {
             hideGrid();
             sendResponse({background: {response: 'Hide grid.'}});
         }
-
         if (receive && receive.popup && receive.popup.message === "show-samples") {
             showSamples();
             sendResponse({background: {response: 'Show samples.'}});
@@ -81,19 +80,4 @@ window.addEventListener('load', () => {
         target.style.display = 'none';
     }
 
-    function showGrid() {
-        createGrid();
-    }
-
 });
-
-function getCount() {
-    const count = localStorage.getItem('count');
-    if (count !== 'undefined') return +count;
-    localStorage.setItem('count', '0');
-    return 0;
-}
-
-function setCount(count) {
-    localStorage.setItem('count', '' + count);
-}
