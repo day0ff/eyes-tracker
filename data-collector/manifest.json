@@ -1,0 +1,31 @@
+{
+  "manifest_version": 2,
+  "name": "Data Collector Extension: for Eyes Tracker Extension.",
+  "description": "This is the Data Collector Extension that grab data for training model that will be used in Eyes Tracker Extension.",
+  "version": "0.1.0",
+  "icons": {
+    "128": "icons/icon128.png",
+    "64": "icons/icon64.png",
+    "48": "icons/icon48.png",
+    "32": "icons/icon32.png",
+    "16": "icons/icon16.png"
+  },
+  "browser_action": {
+    "default_icon": "icons/icon32.png",
+    "default_popup": "popup/popup.html",
+    "default_title": "Data Collector Extension: for Eyes Tracker Extension."
+  },
+  "background": {
+    "pages": [
+      "background/background.html"
+    ]
+  },
+  "permissions": [
+    "tabs",
+    "<all_urls>"
+  ],
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self';",
+  "web_accessible_resources": [
+    "images/*.png"
+  ]
+}

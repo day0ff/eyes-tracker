@@ -1,0 +1,118 @@
+body {
+    margin: 0;
+    text-align: center;
+}
+
+#snapshot-container {
+    position: relative;
+    margin: auto;
+    width: 640px;
+    height: 36px;
+}
+
+#snapShotCanvas {
+    border: solid 2px purple;
+}
+
+.info {
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+    margin: 0;
+    padding: 0;
+    font-size: 26px;
+    overflow: hidden;
+}
+
+#container {
+    position: relative;
+    width: 640px;
+    height: 480px;
+    margin: auto;
+}
+
+#video, #maskCanvas, #eyesCanvas, #headCanvas {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#target {
+    background-color: lightgreen;
+    position: absolute;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    /*transition: all 0.04s ease;*/
+    box-shadow: 0 0 10px 10px white;
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    display: none;
+}
+
+#middlewareCanvas, #files {
+    display: none;
+}
+
+#over-lair {
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    background-color: white;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+}
+
+#over-lair-container {
+    position: relative;
+    margin: 0 auto;
+    width: 500px;
+    height: 500px;
+    outline: solid 1px darkblue;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#over-lair-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url('chrome-extension://__MSG_@@extension_id__/images/aim20x20.png') no-repeat center;
+}
+
+#over-lair-box .info, #over-lair .info {
+    font-size: 8px;
+    display: inline;
+}
+
+#over-lair-box {
+    width: 50px;
+    height: 50px;
+    outline: solid 1px darkred;
+}
+
+#samples {
+    position: absolute;
+    z-index: 200;
+    top: 0;
+    left: 0;
+    background-color: white;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+}
+
+#samples .box {
+    line-height: 8px;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    outline: solid 1px darkred;
+}
+
+#samples .info {
+    font-size: 8px;
+    display: inline;
+}

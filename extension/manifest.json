@@ -1,0 +1,44 @@
+{
+  "manifest_version": 2,
+  "name": "Eyes Tracker Extension",
+  "description": "This is the Eyes Tracker Extension.",
+  "version": "0.1.0",
+  "icons": {
+    "256": "icons/icon256-green.png",
+    "128": "icons/icon128-green.png",
+    "64": "icons/icon64-green.png",
+    "48": "icons/icon48-green.png",
+    "32": "icons/icon32-green.png",
+    "16": "icons/icon16-green.png"
+  },
+  "browser_action": {
+    "default_icon": "icons/icon32-green.png",
+    "default_popup": "popup/popup.html",
+    "default_title": "Eyes Tracker Extension"
+  },
+  "background": {
+    "pages": ["background/background.html"]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content/content.js"
+      ],
+      "css": [
+        "content/content.css"
+      ]
+    }
+  ],
+  "permissions": [
+    "tabs",
+    "storage",
+    "<all_urls>"
+  ],
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self';",
+  "web_accessible_resources": [
+    "images/*.png"
+  ]
+}

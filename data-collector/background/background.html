@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Eyes Tracker</title>
+    <link rel="stylesheet" href="background.css">
+    <script src="../libs/clmtrackr.js"></script>
+    <script src="../libs/tf.min.js"></script>
+</head>
+<body>
+<div id="snapshot-container">
+    <canvas id="middlewareCanvas" width="640" height="480"></canvas>
+    <canvas id="snapShotCanvas" width="140" height="32"></canvas>
+    <span id="shift" class="info">&perp;&nbsp;0	&Prime;</span>
+    <span id="vertical" class="info">&divide;&nbsp;0&prime;</span>
+    <span id="angel" class="info">&#8736;&nbsp;0&deg;</span>
+</div>
+<div id="container">
+    <video id="video" width="640" height="480"></video>
+    <canvas id="maskCanvas" width="640" height="480"></canvas>
+    <canvas id="eyesCanvas" width="640" height="480"></canvas>
+</div>
+
+<canvas id="tensorCanvas" width="140" height="32"></canvas>
+<button id="play">Play.</button>
+<button id="pause">Pause.</button>
+<button id="stop">Stop.</button>
+<button id="show-grid">Show Grid.</button>
+<button id="show-samples">Show Samples.</button>
+
+<input type="file" id="files" accept=".json,.bin" multiple="true">
+<div id="target"></div>
+<div id="over-lair">
+    <div id="over-lair-container">
+        <div id="over-lair-box">
+            <canvas id="sampleCanvas" width="35" height="8"></canvas>
+            <span id="sample-shift" class="info">&perp;&nbsp;0	&Prime;</span>
+            <span id="sample-vertical" class="info">&divide;&nbsp;0&prime;</span>
+            <span id="sample-angel" class="info">&#8736;&nbsp;0&deg;</span>
+            <span id="sample-position" class="info">(0, 0)</span>
+        </div>
+    </div>
+</div>
+<div id="samples"></div>
+<script src="../tracker/tracker.js"></script>
+<script src="../tracker/normalization.js"></script>
+<script src="../samples/samples.js"></script>
+<script src="background.js"></script>
+</body>
+</html>
